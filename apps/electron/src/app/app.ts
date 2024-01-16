@@ -3,6 +3,7 @@ import { rendererAppName, rendererAppPort } from './constants';
 import { environment } from '../environments/environment';
 import { join } from 'path';
 import { format } from 'url';
+import { Server } from '../../../back/src/server';
 
 export default class App {
   // Keep a global reference of the window object, if you don't, the window will
@@ -98,6 +99,8 @@ export default class App {
   }
 
   private static loadMainWindow() {
+    Server.startServer();
+
     // load the index.html of the app.
     if (!App.application.isPackaged) {
       App.mainWindow.loadURL(`http://localhost:${rendererAppPort}`);
