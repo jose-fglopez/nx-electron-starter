@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { HttpClient } from '@angular/common/http';
+import { delay, retry, tap } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -14,9 +15,14 @@ export class AppComponent {
   title = 'front';
 
   constructor(private httpClient: HttpClient) {
-    this.httpClient.get(' http://localhost:3000').subscribe(
-      (res: unknown) => alert(JSON.stringify(res)),
-      (err) => alert(JSON.stringify(err))
-    );
+    this.httpClient
+      .get('http://localhost:3000/')
+      .pipe(
+        retry({
+          count: 100,
+          delay: 2000,
+        })
+      )
+      .subscribe((res) => alert(JSON.stringify(res)));
   }
 }
