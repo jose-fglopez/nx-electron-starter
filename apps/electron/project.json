@@ -40,7 +40,8 @@
         "frontendProject": "front",
         "sourcePath": "dist/apps",
         "outputPath": "dist/packages",
-        "prepackageOnly": true
+        "prepackageOnly": true,
+        "extraProjects": ["back"]
       }
     },
     "make": {
