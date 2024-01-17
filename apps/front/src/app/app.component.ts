@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { HttpClient } from '@angular/common/http';
-import { delay, retry, tap } from 'rxjs';
+import { retry } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -23,6 +23,6 @@ export class AppComponent {
           delay: 2000,
         })
       )
-      .subscribe((res) => alert(JSON.stringify(res)));
+      .subscribe((res) => console.log(res));
   }
 }
