@@ -72,8 +72,10 @@ export default class App {
         contextIsolation: true,
         backgroundThrottling: false,
         preload: join(__dirname, 'main.preload.js'),
+        nodeIntegration: true, // like here
       },
     });
+
     App.mainWindow.setMenu(null);
     App.mainWindow.center();
 
@@ -110,6 +112,7 @@ export default class App {
         })
       );
     }
+    App.mainWindow.webContents.openDevTools();
   }
 
   static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
