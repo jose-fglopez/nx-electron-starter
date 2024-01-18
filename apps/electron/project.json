@@ -40,8 +40,7 @@
         "frontendProject": "front",
         "sourcePath": "dist/apps",
         "outputPath": "dist/packages",
-        "prepackageOnly": true,
-        "extraProjects": ["back"]
+        "prepackageOnly": true
       }
     },
     "make": {
@@ -50,8 +49,7 @@
         "name": "electron",
         "frontendProject": "front",
         "sourcePath": "dist/apps",
-        "outputPath": "dist/executables",
-        "extraProjects": ["back"]
+        "outputPath": "dist/executables"
       }
     },
     "lint": {
