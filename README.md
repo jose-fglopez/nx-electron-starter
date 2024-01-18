@@ -40,11 +40,11 @@ nx-electron-starter/
 - Run `nx run <electron-app-name>:package [--options]` to package your electron application.
 - Or `nx run <electron-app-name>:make --prepackgeOnly` to package your electron application.
 
-## Making Nx Electron Application
+## How to make
 
 - Run `nx run <electron-app-name>:make [--options]` to make your application.
 
-## Testing Nx Electron Application
+## How to test
 
 This project comes with Playwright and Jest configured.
 
