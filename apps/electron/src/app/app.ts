@@ -112,7 +112,6 @@ export default class App {
         })
       );
     }
-    App.mainWindow.webContents.openDevTools();
   }
 
   static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
